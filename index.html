@@ -2,7 +2,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Leaf SMP</title>
+  <title>Leaf SMP - Fire & Cave Theme</title>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <style>
     body {
@@ -12,7 +12,7 @@
       color: #f8f8f8;
     }
     header {
-      background: #000; /* Clean black background */
+      background: #000;
       padding: 1rem;
       text-align: center;
     }
@@ -36,27 +36,17 @@
       display: inline-block;
       padding: 0.8rem 1.5rem;
       margin: 0.5rem;
-      background: linear-gradient(90deg, #006eff, #00aaff);
+      background: linear-gradient(to right, #007bff, #00c6ff);
       color: #fff;
       text-decoration: none;
       border-radius: 5px;
       font-size: 0.9rem;
     }
     a.button:hover {
-      background: #0055cc;
+      background: linear-gradient(to right, #0056b3, #0093cc);
     }
-    .copy-button {
-      margin-top: 0.5rem;
-      background-color: #333;
-      color: #fff;
-      border: none;
-      padding: 0.6rem 1.2rem;
-      font-size: 0.8rem;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-    .copy-button:hover {
-      background-color: #555;
+    .fire-text {
+      color: #ff6347;
     }
     footer {
       text-align: center;
@@ -64,17 +54,30 @@
       background-color: #111;
       font-size: 0.7rem;
     }
+    .copy-btn {
+      margin-top: 10px;
+      padding: 0.5rem 1rem;
+      font-size: 0.7rem;
+      cursor: pointer;
+      background-color: #444;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+    }
+    .ip-address {
+      font-size: 0.85rem;
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>Leaf SMP</h1>
+    <h1 class="fire-text">Leaf SMP</h1>
   </header>
   <div class="container">
     <div class="info-box">
       <h2>SMP IP:</h2>
-      <p id="ip-address">play.leafsmp.space</p>
-      <button class="copy-button" onclick="copyIP()">📋 Copy IP</button><h2>Join Our Discord</h2>
+      <p class="ip-address" id="ipText">play.leafsmp.space</p>
+      <button class="copy-btn" onclick="copyIP()">Copy IP</button><h2>Join Our Discord</h2>
   <a href="https://discord.gg/HnHwR9uudb" target="_blank" class="button">Join Discord</a>
 </div>
 
@@ -86,32 +89,27 @@
 <div class="info-box">
   <h2>About Leaf SMP</h2>
   <p>
-    Leaf SMP is a competitive Lifesteal Minecraft server where each kill strengthens you. Form alliances, create traps, dominate PvP, and survive the underground chaos. Join our thrilling community today!
+    Welcome to Leaf SMP — a lifesteal Minecraft multiplayer server. Build your base underground or in burning peaks. PvP, alliances, lifesteal raids, and more!
   </p>
 </div>
 
   </div>  <footer>
-    &copy; 2025 Leaf SMP. Made by SleepingLegend
+    &copy; 2025 Leaf SMP. Made by SleepingLegend.
   </footer>  <script>
     function copyIP() {
-      const ip = document.getElementById('ip-address').textContent;
-      navigator.clipboard.writeText(ip).then(() => {
-        alert('IP copied to clipboard!');
+      const ip = document.getElementById("ipText").textContent;
+      navigator.clipboard.writeText(ip);
+      alert("IP copied: " + ip);
+    }
+
+    // Fetch real-time player count from API
+    fetch("https://api.mcstatus.io/v2/status/java/play.leafsmp.space")
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("players").textContent = data.players.online + ' players online';
+      })
+      .catch(() => {
+        document.getElementById("players").textContent = "Connect to see players";
       });
-    }
-
-    async function fetchPlayers() {
-      try {
-        const response = await fetch('https://api.mcsrvstat.us/2/play.leafsmp.space');
-        const data = await response.json();
-        const count = data?.players?.online;
-        document.getElementById('players').textContent = count !== undefined ? `${count} players` : 'Offline';
-      } catch (error) {
-        document.getElementById('players').textContent = 'Error loading';
-      }
-    }
-
-    fetchPlayers();
-    setInterval(fetchPlayers, 60000);
   </script></body>
 </html>
