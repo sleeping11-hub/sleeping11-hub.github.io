@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Leaf SMP - Minecraft Server</title>
+  <style>
+    body { background: #FFA500; font-family: 'Segoe UI', Arial, sans-serif; margin: 0; }
+    .container { max-width: 700px; margin: 40px auto; background: #fff; border-radius: 12px; padding: 32px; box-shadow: 0 2px 20px rgba(0,0,0,0.07);}
+    h1 { color: #FF8C00; }
+    .player-count { font-size: 2rem; font-weight: bold; color: #FFA500; }
+    .discord-link {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 12px 28px;
+      background: #5865F2;
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.2rem;
+      transition: background 0.2s;
+    }
+    .discord-link:hover { background: #4752C4; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🍃 Leaf SMP</h1>
+    <p class="player-count">Players Online: <span id="online">Loading...</span></p>
+    <a class="discord-link" href="YOUR_DISCORD_INVITE_LINK" target="_blank">Join Our Discord!</a>
+    <p style="margin-top:40px;">Server IP: <b>play.leafsmp.space</b></p>
+  </div>
+  <script>
+    // Fetch player count from mcstatus.io API for Java servers
+    fetch('https://api.mcstatus.io/v2/status/java/play.leafsmp.space')
+      .then(response => response.json())
+      .then(data => {
+        const count = data.players && data.players.online ? data.players.online : 0;
+        document.getElementById('online').textContent = count;
+      })
+      .catch(() => {
+        document.getElementById('online').textContent = "N/A";
+      });
+  </script>
+</body>
+</html>
