@@ -12,14 +12,14 @@
       color: #f8f8f8;
     }
     header {
-      background-color: #000;
+      background: #000;
       padding: 1rem;
       text-align: center;
     }
     h1 {
       margin: 0;
       font-size: 1.5rem;
-      color: #ff6347;
+      background: #000;
     }
     .container {
       padding: 2rem;
@@ -32,20 +32,35 @@
       max-width: 600px;
       border: 2px solid #ff4500;
       border-radius: 10px;
-      word-wrap: break-word;
     }
     a.button {
       display: inline-block;
       padding: 0.8rem 1.5rem;
       margin: 0.5rem;
-      background: linear-gradient(45deg, #00f, #33f);
+      background: linear-gradient(to right, #00c6ff, #0072ff);
       color: #fff;
       text-decoration: none;
       border-radius: 5px;
       font-size: 0.9rem;
     }
     a.button:hover {
-      background: linear-gradient(45deg, #009, #22f);
+      opacity: 0.9;
+    }
+    .copy-btn {
+      margin-top: 0.8rem;
+      background: #444;
+      border: 1px solid #ff4500;
+      color: #fff;
+      padding: 0.6rem 1.2rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.8rem;
+    }
+    .copy-btn:hover {
+      background: #ff4500;
+    }
+    .fire-text {
+      color: #ff6347;
     }
     footer {
       text-align: center;
@@ -53,16 +68,21 @@
       background-color: #111;
       font-size: 0.7rem;
     }
+    .description {
+      font-size: 0.6rem;
+      line-height: 1.8;
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>Leaf SMP</h1>
+    <h1 class="fire-text">Leaf SMP</h1>
   </header>
   <div class="container">
     <div class="info-box">
       <h2>SMP IP:</h2>
-      <p style="word-break: break-all;">play.leafsmp.space</p><h2>Join Our Discord</h2>
+      <p id="ip-text">play.leafsmp.space</p>
+      <button class="copy-btn" onclick="copyIP()">Copy IP</button><h2>Join Our Discord</h2>
   <a href="https://discord.gg/HnHwR9uudb" target="_blank" class="button">Join Discord</a>
 </div>
 
@@ -73,17 +93,24 @@
 
 <div class="info-box">
   <h2>About Leaf SMP</h2>
-  <p style="font-size: 0.7rem;">
-    Welcome to Leaf SMP — a Lifesteal Minecraft multiplayer server.
-    Build your base deep underground or high in burning peaks! PvP, alliances, and custom
-    challenges await you. Track online players live and join the community today!
+  <p class="description">
+    ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ʟᴇᴀꜰ ѕᴍᴘ — ᴀ ʟɪꜰᴇѕᴛᴇᴀʟ ᴍɪɴᴇᴄʀᴀꜰᴛ ᴍᴜʟᴛɪᴘʟᴀʏᴇʀ ѕᴇʀᴠᴇʀ. ʙᴜɪʟᴅ ʏᴏᴜʀ ʙᴀѕᴇ ᴅᴇᴇᴘ ᴜɴᴅᴇʀɢʀᴏᴜɴᴅ ᴏʀ ʜɪɢʜ ɪɴ ʙᴜʀɴɪɴɢ ᴘᴇᴀᴋѕ! ᴘᴠᴘ ᴀʟʟɪᴀɴᴄᴇѕ, ᴀɴᴅ ᴄᴜѕᴛᴏᴍ ᴄʜᴀʟʟᴇɴɢᴇѕ ᴀᴡᴀɪᴛ ʏᴏᴜ. ᴛʀᴀᴄᴋ ᴏɴʟɪɴᴇ ᴘʟᴀʏᴇʀѕ ʟɪᴠᴇ ᴀɴᴅ ᴊᴏɪɴ ᴛʜᴇ ᴄᴏᴍᴍᴜɴɪᴛʏ ᴛᴏᴅᴀʏ!
   </p>
 </div>
 
   </div>  <footer>
-    Made by SleepingLegend — &copy; 2025 Leaf SMP. All rights reserved.
+    Made by SleepingLegend<br>
+    &copy; 2025 Leaf SMP. All rights reserved.
   </footer>  <script>
-    // Dummy fetch, replace with real API if needed
     document.getElementById('players').textContent = Math.floor(Math.random() * 20 + 1) + ' players';
+
+    function copyIP() {
+      const ip = document.getElementById('ip-text').textContent;
+      navigator.clipboard.writeText(ip).then(() => {
+        alert('IP copied: ' + ip);
+      }).catch(err => {
+        alert('Failed to copy IP');
+      });
+    }
   </script></body>
 </html>
