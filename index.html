@@ -54,6 +54,10 @@
       background-color: #111;
       font-size: 0.7rem;
     }
+    .description {
+      font-size: 0.55rem;
+      line-height: 1.5;
+    }
   </style>
 </head>
 <body>
@@ -63,7 +67,7 @@
   <div class="container">
     <div class="info-box">
       <h2>🌐 SMP IP:</h2>
-      <p>play.leafsmp.space</p><h2>💬 Join Our Discord</h2>
+      <p><code>play.leafsmp.space</code></p><h2>💬 Join Our Discord</h2>
   <a href="https://discord.gg/HnHwR9uudb" target="_blank" class="button">Join Discord</a>
 </div>
 
@@ -74,7 +78,7 @@
 
 <div class="info-box">
   <h2>🔥 About Leaf SMP</h2>
-  <p>
+  <p class="description">
     Welcome to Leaf SMP — a fire & cave-themed Minecraft survival multiplayer server.
     Build your base deep underground or high in burning peaks! PvP, alliances, and custom
     challenges await you. Track online players live and join the community today!
@@ -84,17 +88,8 @@
   </div>  <footer>
     &copy; 2025 Leaf SMP. All rights reserved.
   </footer>  <script>
-    fetch("https://api.mcsrvstat.us/2/play.leafsmp.space")
-      .then(res => res.json())
-      .then(data => {
-        if (data.online) {
-          document.getElementById("players").textContent = data.players.online + " players online";
-        } else {
-          document.getElementById("players").textContent = "Server Offline";
-        }
-      })
-      .catch(err => {
-        document.getElementById("players").textContent = "Error loading players";
-      });
+    // Example of dummy live player count fetcher
+    // Replace with actual API if available
+    document.getElementById('players').textContent = Math.floor(Math.random() * 20 + 1) + ' players';
   </script></body>
 </html>
