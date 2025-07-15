@@ -2,7 +2,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Leaf SMP - Fire & Cave Theme</title>
+  <title>Leaf SMP</title>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <style>
     body {
@@ -12,19 +12,13 @@
       color: #f8f8f8;
     }
     header {
-      background: linear-gradient(90deg, #ff4500, #8b0000);
+      background: #000; /* Clean black background */
       padding: 1rem;
       text-align: center;
-      background-image: url('https://wallpapercave.com/wp/wp7488784.jpg');
-      background-size: cover;
-      background-position: center;
     }
     h1 {
       margin: 0;
       font-size: 1.5rem;
-      background: linear-gradient(to right, #ff4500, #ff8c00);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
     }
     .container {
       padding: 2rem;
@@ -42,18 +36,27 @@
       display: inline-block;
       padding: 0.8rem 1.5rem;
       margin: 0.5rem;
-      background: linear-gradient(45deg, #00c6ff, #0072ff);
+      background: linear-gradient(90deg, #006eff, #00aaff);
       color: #fff;
       text-decoration: none;
       border-radius: 5px;
       font-size: 0.9rem;
     }
     a.button:hover {
-      opacity: 0.85;
+      background: #0055cc;
     }
-    .copy-btn {
-      background-color: #444;
-      margin-top: 0.8rem;
+    .copy-button {
+      margin-top: 0.5rem;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      font-size: 0.8rem;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .copy-button:hover {
+      background-color: #555;
     }
     footer {
       text-align: center;
@@ -69,50 +72,46 @@
   </header>
   <div class="container">
     <div class="info-box">
-      <h2>SMP IP</h2>
-      <p id="server-ip">play.leafsmp.space</p>
-      <button class="button copy-btn" onclick="copyIP()">📋 Copy IP</button>
-    </div><div class="info-box">
-  <h2>Join Our Discord</h2>
+      <h2>SMP IP:</h2>
+      <p id="ip-address">play.leafsmp.space</p>
+      <button class="copy-button" onclick="copyIP()">📋 Copy IP</button><h2>Join Our Discord</h2>
   <a href="https://discord.gg/HnHwR9uudb" target="_blank" class="button">Join Discord</a>
 </div>
 
 <div class="info-box">
-  <h2>Players Online</h2>
+  <h2>Players Online:</h2>
   <p><span id="players">Loading...</span></p>
 </div>
 
 <div class="info-box">
   <h2>About Leaf SMP</h2>
-  <p style="font-size: 0.65rem">
-    ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ʟᴇᴀꜰ ѕᴍᴘ — ᴀ ʟɪꜰᴇѕᴛᴇᴀʟ ᴍɪɴᴇᴄʀᴀꜰᴛ ᴍᴜʟᴛɪᴘʟᴀʏᴇʀ ѕᴇʀᴠᴇʀ. ʙᴜɪʟᴅ ʏᴏᴜʀ ʙᴀѕᴇ ᴅᴇᴇᴘ ᴜɴᴅᴇʀɢʀᴏᴜɴᴅ ᴏʀ ʜɪɢʜ ɪɴ ʙᴜʀɴɪɴɢ ᴘᴇᴀᴋѕ! ᴘᴠᴘ ᴀʟʟɪᴀɴᴄᴇѕ, ᴀɴᴅ ᴄᴜѕᴛᴏᴍ ᴄʜᴀʟʟᴇɴɢᴇѕ ᴀᴡᴀɪᴛ ʏᴏᴜ. ᴛʀᴀᴄᴋ ᴏɴʟɪɴᴇ ᴘʟᴀʏᴇʀѕ ʟɪᴠᴇ ᴀɴᴅ ᴊᴏɪɴ ᴛʜᴇ ᴄᴏᴍᴍᴜɴɪᴛʏ ᴛᴏᴅᴀʏ!
+  <p>
+    Leaf SMP is a competitive Lifesteal Minecraft server where each kill strengthens you. Form alliances, create traps, dominate PvP, and survive the underground chaos. Join our thrilling community today!
   </p>
 </div>
 
   </div>  <footer>
-    Made by SleepingLegend | &copy; 2025 Leaf SMP. All rights reserved.
+    &copy; 2025 Leaf SMP. Made by SleepingLegend
   </footer>  <script>
-    async function fetchPlayerCount() {
-      try {
-        const res = await fetch("https://api.mcsrvstat.us/3/play.leafsmp.space");
-        const data = await res.json();
-        if (data.online && data.players && typeof data.players.online === 'number') {
-          document.getElementById('players').textContent = data.players.online + ' players online';
-        } else {
-          document.getElementById('players').textContent = 'Server offline';
-        }
-      } catch (e) {
-        document.getElementById('players').textContent = 'Error loading players';
-      }
-    }
-    fetchPlayerCount();
-    setInterval(fetchPlayerCount, 60000);
-
     function copyIP() {
-      const ip = document.getElementById('server-ip').textContent;
+      const ip = document.getElementById('ip-address').textContent;
       navigator.clipboard.writeText(ip).then(() => {
-        alert('IP copied: ' + ip);
+        alert('IP copied to clipboard!');
       });
     }
+
+    async function fetchPlayers() {
+      try {
+        const response = await fetch('https://api.mcsrvstat.us/2/play.leafsmp.space');
+        const data = await response.json();
+        const count = data?.players?.online;
+        document.getElementById('players').textContent = count !== undefined ? `${count} players` : 'Offline';
+      } catch (error) {
+        document.getElementById('players').textContent = 'Error loading';
+      }
+    }
+
+    fetchPlayers();
+    setInterval(fetchPlayers, 60000);
   </script></body>
 </html>
