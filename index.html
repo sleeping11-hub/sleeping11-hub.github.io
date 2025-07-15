@@ -2,7 +2,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Leaf SMP - Fire & Cave Theme</title>
+  <title>Leaf SMP</title>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <style>
     body {
@@ -12,16 +12,14 @@
       color: #f8f8f8;
     }
     header {
-      background: linear-gradient(90deg, #ff4500, #8b0000);
+      background-color: black;
       padding: 1rem;
       text-align: center;
     }
     h1 {
       margin: 0;
       font-size: 1.5rem;
-      background: linear-gradient(90deg, #ffcc00, #ff6600, #cc0000);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: #ffffff;
     }
     .container {
       padding: 2rem;
@@ -39,14 +37,14 @@
       display: inline-block;
       padding: 0.8rem 1.5rem;
       margin: 0.5rem;
-      background: linear-gradient(90deg, #0066ff, #0033cc);
+      background: linear-gradient(45deg, #007bff, #00f7ff);
       color: #fff;
       text-decoration: none;
       border-radius: 5px;
       font-size: 0.9rem;
     }
     a.button:hover {
-      background: linear-gradient(90deg, #0055cc, #002288);
+      background: linear-gradient(45deg, #0056b3, #00c5ff);
     }
     .fire-text {
       color: #ff6347;
@@ -55,6 +53,9 @@
       text-align: center;
       padding: 1rem;
       background-color: #111;
+      font-size: 0.7rem;
+    }
+    p.small-text {
       font-size: 0.7rem;
     }
   </style>
@@ -77,16 +78,17 @@
 
 <div class="info-box">
   <h2>About Leaf SMP</h2>
-  <p style="font-size: 0.6rem">
-    Welcome to Leaf SMP — a fire & cave-themed Minecraft Lifesteal multiplayer server.
-    Build your base deep underground or high in burning peaks! PvP, alliances, and custom
-    challenges await you. Track online players live and join the community today!
+  <p class="small-text">
+    Welcome to Leaf SMP — a lifesteal Minecraft multiplayer server.
+    Build underground or rise in chaos. PvP, alliances, and unique challenges await. Track players live and be part of our fire & cave themed world!
   </p>
 </div>
 
   </div>  <footer>
-    &copy; 2025 Leaf SMP. All rights reserved. Made by SleepingLegend
+    &copy; 2025 Leaf SMP. Made by SleepingLegend.
   </footer>  <script>
+    // Example of dummy live player count fetcher
+    // Replace with actual API if available
     document.getElementById('players').textContent = Math.floor(Math.random() * 20 + 1) + ' players';
   </script></body>
-</html>
+    </html>
