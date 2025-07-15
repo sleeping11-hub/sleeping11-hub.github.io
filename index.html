@@ -1,46 +1,100 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Leaf SMP - Minecraft Server</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leaf SMP - Fire & Cave Theme</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <style>
-    body { background: #FFA500; font-family: 'Segoe UI', Arial, sans-serif; margin: 0; }
-    .container { max-width: 700px; margin: 40px auto; background: #fff; border-radius: 12px; padding: 32px; box-shadow: 0 2px 20px rgba(0,0,0,0.07);}
-    h1 { color: #FF8C00; }
-    .player-count { font-size: 2rem; font-weight: bold; color: #FFA500; }
-    .discord-link {
-      display: inline-block;
-      margin-top: 18px;
-      padding: 12px 28px;
-      background: #5865F2;
-      color: #fff;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.2rem;
-      transition: background 0.2s;
+    body {
+      margin: 0;
+      font-family: 'Press Start 2P', cursive;
+      background: radial-gradient(circle at center, #1a1a1a, #000);
+      color: #f8f8f8;
     }
-    .discord-link:hover { background: #4752C4; }
+    header {
+      background: linear-gradient(90deg, #ff4500, #8b0000);
+      padding: 1rem;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+    .container {
+      padding: 2rem;
+      text-align: center;
+    }
+    .info-box {
+      background-color: rgba(50, 50, 50, 0.9);
+      margin: 1rem auto;
+      padding: 1.5rem;
+      max-width: 600px;
+      border: 2px solid #ff4500;
+      border-radius: 10px;
+    }
+    a.button {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      margin: 0.5rem;
+      background: #ff4500;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 0.9rem;
+    }
+    a.button:hover {
+      background: #ff3300;
+    }
+    .fire-text {
+      color: #ff6347;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #111;
+      font-size: 0.7rem;
+    }
   </style>
 </head>
 <body>
+  <header>
+    <h1 class="fire-text">🔥 Leaf SMP - Fire & Cave Theme 🔥</h1>
+  </header>
   <div class="container">
-    <h1>🍃 Leaf SMP</h1>
-    <p class="player-count">Players Online: <span id="online">Loading...</span></p>
-    <a class="discord-link" href="YOUR_DISCORD_INVITE_LINK" target="_blank">Join Our Discord!</a>
-    <p style="margin-top:40px;">Server IP: <b>play.leafsmp.space</b></p>
-  </div>
-  <script>
-    // Fetch player count from mcstatus.io API for Java servers
-    fetch('https://api.mcstatus.io/v2/status/java/play.leafsmp.space')
-      .then(response => response.json())
+    <div class="info-box">
+      <h2>🌐 SMP IP:</h2>
+      <p>play.leafsmp.space</p><h2>💬 Join Our Discord</h2>
+  <a href="https://discord.gg/HnHwR9uudb" target="_blank" class="button">Join Discord</a>
+</div>
+
+<div class="info-box">
+  <h2>🧑‍🌾 Players Online:</h2>
+  <p><span id="players">Loading...</span></p>
+</div>
+
+<div class="info-box">
+  <h2>🔥 About Leaf SMP</h2>
+  <p>
+    Welcome to Leaf SMP — a fire & cave-themed Minecraft survival multiplayer server.
+    Build your base deep underground or high in burning peaks! PvP, alliances, and custom
+    challenges await you. Track online players live and join the community today!
+  </p>
+</div>
+
+  </div>  <footer>
+    &copy; 2025 Leaf SMP. All rights reserved.
+  </footer>  <script>
+    fetch("https://api.mcsrvstat.us/2/play.leafsmp.space")
+      .then(res => res.json())
       .then(data => {
-        const count = data.players && data.players.online ? data.players.online : 0;
-        document.getElementById('online').textContent = count;
+        if (data.online) {
+          document.getElementById("players").textContent = data.players.online + " players online";
+        } else {
+          document.getElementById("players").textContent = "Server Offline";
+        }
       })
-      .catch(() => {
-        document.getElementById('online').textContent = "N/A";
+      .catch(err => {
+        document.getElementById("players").textContent = "Error loading players";
       });
-  </script>
-</body>
+  </script></body>
 </html>
