@@ -1,20 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>My Profile</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cyber Profile - OP</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      height: 100vh;
+      background: linear-gradient(120deg, #0a0a0a, #1a1a1a);
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      padding: 30px;
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 0 30px rgba(255, 0, 0, 0.3);
+      animation: popIn 1s ease forwards;
+    }
+
+    @keyframes popIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.5);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .card img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #ff0000;
+      box-shadow: 0 0 15px #ff0000;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 28px;
+      color: #ff4a4a;
+      margin-bottom: 5px;
+    }
+
+    h2 {
+      font-size: 16px;
+      color: #aaa;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 14px;
+      color: #ddd;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 10px 5px;
+      padding: 10px 20px;
+      background: #ff1a1a;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 14px;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #cc0000;
+    }
+  </style>
 </head>
 <body>
-  <div class="profile-card">
-    <img src="profile.png" alt="Profile Picture" class="profile-pic">
-    <h1>SleepingLegend</h1>
-    <p>Web Developer | Leaf SMP Admin | Cyber Spy</p>
-    <div class="socials">
-      <a href="#">YouTube</a>
-      <a href="#">Discord</a>
-      <a href="#">GitHub</a>
-    </div>
+  <div class="card">
+    <img src="https://i.pinimg.com/originals/2a/b9/eb/2ab9eb6bcb1e0a53f9643dd2e20ad3e0.jpg" alt="Profile" />
+    <h1>Scuu Pro</h1>
+    <h2>Cybersecurity | Developer | Dreamer</h2>
+    <p>"I don't just write code... I build digital fortresses 💻🛡️"</p>
+    <a href="#" class="btn">Portfolio</a>
+    <a href="#" class="btn">Hire Me</a>
   </div>
 </body>
 </html>
