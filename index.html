@@ -2,60 +2,147 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Scuu Pro - Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Scuu Pro - Cyber Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+      font-family: 'Roboto', sans-serif;
+      color: #f0f0f0;
+      overflow-x: hidden;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #0ff;
+      box-shadow: 0 0 20px #0ff;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.5rem;
+      color: #0ff;
+      text-shadow: 0 0 10px #0ff;
+    }
+
+    .tagline {
+      font-size: 1rem;
+      color: #aaa;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: #141414;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+    }
+
+    section {
+      margin-top: 30px;
+    }
+
+    h2 {
+      color: #00ffff;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #ccc;
+      line-height: 1.6;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill {
+      background: #0ff2;
+      padding: 10px 20px;
+      border-radius: 50px;
+      color: #0ff;
+      font-weight: bold;
+      box-shadow: 0 0 10px #0ff3;
+      transition: transform 0.2s;
+    }
+
+    .skill:hover {
+      transform: scale(1.1);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <img src="https://i.imgur.com/sJ4ZxLB.png" alt="Profile Picture" class="profile-img"/>
+    <h1>Scuu Pro</h1>
+    <p class="tagline">Cybersecurity Enthusiast | Web Developer | Future Hacker 🔒</p>
+  </header>
+
   <div class="container">
-    <header>
-      <h1>Scuu Pro</h1>
-      <p>Cybersecurity Enthusiast • Developer • Dreamer</p>
-    </header>
-
-    <section class="profile-pic">
-      <img src="your-image.png" alt="Profile Picture" />
-    </section>
-
-    <section class="about">
+    <section>
       <h2>About Me</h2>
-      <p>
-        I build secure systems, futuristic websites, and believe in achieving Jannah through knowledge and good work. I’m self-taught, passionate about hacking (halal white-hat only ⚡), and always learning.
-      </p>
+      <p>I'm a passionate learner who loves building, breaking, and understanding the web. I dream big and hustle harder. Whether it's HTML, CSS, or real-world cyber problems — I’m on it. Let's build something great.</p>
     </section>
 
-    <section class="skills">
+    <section>
       <h2>Skills</h2>
-      <ul>
-        <li>Python & HTML/CSS</li>
-        <li>Ethical Hacking</li>
-        <li>Roblox Game Dev</li>
-        <li>TryHackMe / Cybersec Labs</li>
-      </ul>
-    </section>
-
-    <section class="projects">
-      <h2>Projects</h2>
-      <div class="project-card">
-        <h3>Anti-Cheat Script</h3>
-        <p>Built a powerful anti-cheat in 20 mins with full research. Lightweight, fast, and bug-free.</p>
-      </div>
-      <div class="project-card">
-        <h3>Roblox GUI</h3>
-        <p>Custom designed Blox Fruits GUI with stunning performance and modern UI.</p>
+      <div class="skills">
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">Python</div>
+        <div class="skill">Cybersecurity</div>
+        <div class="skill">Roblox Dev</div>
+        <div class="skill">TryHackMe</div>
       </div>
     </section>
 
-    <section class="contact">
-      <h2>Contact Me</h2>
-      <p>Email: scuu@cybersafe.me</p>
-      <p>Discord: @ScuuPro</p>
+    <section>
+      <h2>Contact</h2>
+      <p>Email: scuu@cybermail.com<br>GitHub: github.com/scuu-pro<br>Location: Lahore, Pakistan 🌍</p>
     </section>
-
-    <footer>
-      <p>© 2025 Scuu Pro — Built with ❤️ and 🔐</p>
-    </footer>
   </div>
+
+  <footer>
+    &copy; 2025 Scuu Pro. All rights reserved.
+  </footer>
 </body>
 </html>
