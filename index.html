@@ -1,115 +1,88 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Leaf SMP - Fire & Cave Theme</title>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SleepingLegend_ - Developer Blog</title>
   <style>
     body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0f0f0f;
+      color: #e0e0e0;
       margin: 0;
-      font-family: 'Press Start 2P', cursive;
-      background: radial-gradient(circle at center, #1a1a1a, #000);
-      color: #f8f8f8;
+      padding: 0;
     }
     header {
-      background: #000;
-      padding: 1rem;
+      background-color: #1a1a1a;
+      padding: 20px;
       text-align: center;
+      border-bottom: 2px solid #444;
     }
-    h1 {
+    header h1 {
       margin: 0;
-      font-size: 1.5rem;
+      font-size: 2.5em;
+      color: #4fc3f7;
+    }
+    header p {
+      font-size: 1.1em;
+      color: #aaa;
     }
     .container {
-      padding: 2rem;
-      text-align: center;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
     }
-    .info-box {
-      background-color: rgba(50, 50, 50, 0.9);
-      margin: 1rem auto;
-      padding: 1.5rem;
-      max-width: 600px;
-      border: 2px solid #ff4500;
-      border-radius: 10px;
+    h2 {
+      color: #4fc3f7;
+      border-bottom: 1px solid #333;
+      padding-bottom: 5px;
     }
-    a.button {
-      display: inline-block;
-      padding: 0.8rem 1.5rem;
-      margin: 0.5rem;
-      background: linear-gradient(to right, #007bff, #00c6ff);
-      color: #fff;
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li::before {
+      content: "🚀 ";
+    }
+    .contact {
+      margin-top: 40px;
+      border-top: 1px solid #333;
+      padding-top: 20px;
+      font-size: 1em;
+    }
+    a {
+      color: #4fc3f7;
       text-decoration: none;
-      border-radius: 5px;
-      font-size: 0.9rem;
     }
-    a.button:hover {
-      background: linear-gradient(to right, #0056b3, #0093cc);
-    }
-    .fire-text {
-      color: #ff6347;
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background-color: #111;
-      font-size: 0.7rem;
-    }
-    .copy-btn {
-      margin-top: 10px;
-      padding: 0.5rem 1rem;
-      font-size: 0.7rem;
-      cursor: pointer;
-      background-color: #444;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-    }
-    .ip-address {
-      font-size: 0.85rem;
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1 class="fire-text">Leaf SMP</h1>
+    <h1>SleepingLegend_</h1>
+    <p>Python Developer • Web Developer • Bot Maker • Leader</p>
   </header>
+
   <div class="container">
-    <div class="info-box">
-      <h2>SMP IP:</h2>
-      <p class="ip-address" id="ipText">play.leafsmp.space</p>
-      <button class="copy-btn" onclick="copyIP()">Copy IP</button><h2>Join Our Discord</h2>
-  <a href="https://discord.gg/HnHwR9uudb" target="_blank" class="button">Join Discord</a>
-</div>
+    <h2>About Me</h2>
+    <p>I’m a passionate developer who works with Python, builds websites, creates bots, and knows how to lead a team. Currently working with Leaf SMP and always open to new collaborations.</p>
 
-<div class="info-box">
-  <h2>Players Online:</h2>
-  <p><span id="players">Loading...</span></p>
-</div>
+    <h2>Skills</h2>
+    <ul>
+      <li>Python Programming</li>
+      <li>HTML, CSS, JavaScript (basic)</li>
+      <li>Bot Development</li>
+      <li>Team Leadership</li>
+      <li>Creative Problem Solving</li>
+    </ul>
 
-<div class="info-box">
-  <h2>About Leaf SMP</h2>
-  <p>
-    Welcome to Leaf SMP — a lifesteal Minecraft multiplayer server. Build your base underground or in burning peaks. PvP, alliances, lifesteal raids, and more!
-  </p>
-</div>
-
-  </div>  <footer>
-    &copy; 2025 Leaf SMP. Made by SleepingLegend.
-  </footer>  <script>
-    function copyIP() {
-      const ip = document.getElementById("ipText").textContent;
-      navigator.clipboard.writeText(ip);
-      alert("IP copied: " + ip);
-    }
-
-    // Fetch real-time player count from API
-    fetch("https://api.mcstatus.io/v2/status/java/play.leafsmp.space")
-      .then(res => res.json())
-      .then(data => {
-        document.getElementById("players").textContent = data.players.online + ' players online';
-      })
-      .catch(() => {
-        document.getElementById("players").textContent = "Connect to see players";
-      });
-  </script></body>
+    <div class="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:scuupro@gmail.com">scuupro@gmail.com</a></p>
+      <p>Discord: SleepingLegend_</p>
+    </div>
+  </div>
+</body>
 </html>
