@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Scuu Pro - Cyber Portfolio</title>
+  <title>SleepingLegend</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap" rel="stylesheet">
   <style>
     * {
@@ -113,14 +113,14 @@
 <body>
   <header>
     <img src="https://i.imgur.com/sJ4ZxLB.png" alt="Profile Picture" class="profile-img"/>
-    <h1>Scuu Pro</h1>
-    <p class="tagline">Cybersecurity Enthusiast | Web Developer | Future Hacker 🔒</p>
+    <h1>SleepingLegend</h1>
+    <p class="tagline">| Web Developer |</p>
   </header>
 
   <div class="container">
     <section>
       <h2>About Me</h2>
-      <p>I'm a passionate learner who loves building, breaking, and understanding the web. I dream big and hustle harder. Whether it's HTML, CSS, or real-world cyber problems — I’m on it. Let's build something great.</p>
+      <p>I'm SleepingLegend d</p>
     </section>
 
     <section>
@@ -129,9 +129,9 @@
         <div class="skill">HTML</div>
         <div class="skill">CSS</div>
         <div class="skill">Python</div>
-        <div class="skill">Cybersecurity</div>
-        <div class="skill">Roblox Dev</div>
-        <div class="skill">TryHackMe</div>
+        <div class="skill">Minecraft Dev</div>
+        <div class="skill">discord Dev</div>
+        <div class="skill">Website dev</div>
       </div>
     </section>
 
@@ -144,5 +144,189 @@
   <footer>
     &copy; 2025 Scuu Pro. All rights reserved.
   </footer>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SleepingLegend Portfolio</title>
+  <style>
+    /* RESET & FONT */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to bottom, #0a0a23, #1a1a40);
+      color: #f0f0f0;
+      overflow-x: hidden;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    /* SNOW EFFECT */
+    .snowflake {
+      position: fixed;
+      top: -10px;
+      width: 10px;
+      height: 10px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: fall 10s linear infinite;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(100vh);
+      }
+    }
+
+    /* HERO */
+    header {
+      text-align: center;
+      padding: 4rem 2rem 2rem;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: #00f0ff;
+      text-shadow: 0 0 10px #00f0ff;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #cfcfcf;
+    }
+
+    /* SECTION STYLING */
+    section {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      box-shadow: 0 0 10px #00f0ff33;
+    }
+
+    section h2 {
+      color: #00eaff;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #00eaff44;
+      padding-bottom: 0.5rem;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    ul li {
+      margin: 0.5rem 0;
+    }
+
+    /* CONTACT */
+    .contact-links a {
+      display: inline-block;
+      color: #00eaff;
+      text-decoration: none;
+      margin-right: 1rem;
+      font-weight: bold;
+    }
+
+    .contact-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      section {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SNOW EFFECT -->
+  <script>
+    for (let i = 0; i < 100; i++) {
+      const snow = document.createElement("div");
+      snow.classList.add("snowflake");
+      snow.style.left = Math.random() * 100 + "vw";
+      snow.style.animationDuration = 5 + Math.random() * 5 + "s";
+      snow.style.opacity = Math.random();
+      snow.style.width = snow.style.height = Math.random() * 5 + 2 + "px";
+      document.body.appendChild(snow);
+    }
+  </script>
+
+  <!-- HERO -->
+  <header>
+    <h1>SleepingLegend</h1>
+    <p>discord dev • Web Dev • Minecraft dev</p>
+  </header>
+
+  <!-- ABOUT -->
+  <section>
+    <h2>About Me</h2>
+    <p>
+       I’m SleepingLegend  
+    </p>
+    <p>
+      I'm available for freelance work and collaboration.
+    </p>
+  </section>
+
+  <!-- SKILLS -->
+  <section>
+    <h2>Skills</h2>
+    <ul>
+      <li>✅ HTML, CSS, JS (Basics)</li>
+      <li>✅ Python Programming</li>
+      <li>✅ Minecraft server developing</li>
+      <li>✅ discord bot developing</li>
+      <li>✅ Website developing </li>
+    </ul>
+  </section>
+
+  <!-- LANGUAGES -->
+  <section>
+    <h2>Languages I Speak</h2>
+    <ul>
+      <li>🗣 English – Intermediate</li>
+      <li>🗣 hindi – Fluent</li>
+    </ul>
+  </section>
+
+  <!-- CONTACT -->
+  <section>
+    <h2>Contact</h2>
+    <div class="contact-links">
+      <a href="scuupro@gmail.com">📧 Gmail</a>
+      <a href="#">💬 Discord: SleepingLegend_</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    Made with ❤️ by SleepingLegend
+  </footer>
+
 </body>
 </html>
