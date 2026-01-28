@@ -1,56 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SleepingLegend | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <title>Special Message</title>
+  <style>
+    body {
+      background-color: #1e1e1e;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      margin: 0;
+    }
+    h1 {
+      color: #ff4c4c;
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 20px;
+      border: none;
+      border-radius: 10px;
+      background-color: #4c8cff;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background-color: #2a6bff;
+    }
+    p {
+      font-size: 32px;
+      color: #ffd700;
+      margin-top: 30px;
+    }
+  </style>
 </head>
 <body>
 
-    <div class="container">
+  <h1>I want to say something special for you</h1>
+  <button onclick="showMessage()">Click Me!</button>
+  <p id="hiddenMessage"></p>
 
-        <!-- Header -->
-        <header class="hero">
-            <h1 class="name">SleepingLegend</h1>
-            <p class="title">Normal Developer</p>
-        </header>
-
-        <!-- About -->
-        <section class="about">
-            <p>
-                I'm a normal developer with strong experience in Minecraft server development
-                and web development. I have worked on Minecraft servers, website development,
-                plugin configuration, Discord server development, and Discord bot development.
-            </p>
-        </section>
-
-        <!-- Projects -->
-        <section class="projects">
-            <h2>Recent Projects</h2>
-
-            <div class="project-card">
-                <h3>LEAF SMP</h3>
-                <p>
-                    1k+ members Minecraft SMP.  
-                    I developed and managed the entire server for 1 year, including:
-                </p>
-                <ul>
-                    <li>Minecraft server development</li>
-                    <li>Discord server setup</li>
-                    <li>Discord bots & integrations</li>
-                    <li>Plugin configuration & management</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <p><span>Discord:</span> sleepinglegend_</p>
-            <p><span>Experience:</span> 2 Years</p>
-        </footer>
-
-    </div>
+  <script>
+    function showMessage() {
+      document.getElementById("hiddenMessage").innerText = "You are dumb ngl 😂";
+    }
+  </script>
 
 </body>
 </html>
