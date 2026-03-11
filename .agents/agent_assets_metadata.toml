@@ -1,0 +1,8 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "XG__44R545Ei9hSrGpeQJ"
+uri = "file://output/fiverr-freelancer-profile.md"
+type = "text"
+title = "Fiverr / Freelancer Profile & Gig Setup — SleepingWarrior"
