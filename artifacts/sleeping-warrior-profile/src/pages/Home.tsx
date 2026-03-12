@@ -35,7 +35,7 @@ export default function Home() {
             {/* Personal Logo */}
             <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-primary/40 flex items-center justify-center bg-card">
               <img
-                src={`${import.meta.env.BASE_URL}images/my-logo.png`}
+                src={`${import.meta.env.BASE_URL}images/my-logo.jpeg`}
                 alt="SleepingWarrior Logo"
                 className="w-full h-full object-cover"
                 onError={(e) => {
@@ -97,7 +97,7 @@ export default function Home() {
               className="w-24 h-24 rounded-full overflow-hidden border-4 border-primary/40 shadow-[0_0_30px_rgba(0,212,255,0.3)] mb-6 bg-card flex items-center justify-center"
             >
               <img
-                src={`${import.meta.env.BASE_URL}images/my-logo.png`}
+                src={`${import.meta.env.BASE_URL}images/my-logo.jpeg`}
                 alt="SleepingWarrior"
                 className="w-full h-full object-cover"
                 onError={(e) => {
@@ -332,7 +332,7 @@ export default function Home() {
                   {/* AtomsLab Logo */}
                   <div className="w-14 h-14 rounded-xl overflow-hidden border-2 border-primary/30 bg-card/80 flex items-center justify-center flex-shrink-0 shadow-[0_0_15px_rgba(0,212,255,0.15)]">
                     <img
-                      src={`${import.meta.env.BASE_URL}images/atomslab-logo.png`}
+                      src={`${import.meta.env.BASE_URL}images/atomslab-logo.webp`}
                       alt="AtomsLab Logo"
                       className="w-full h-full object-contain p-1"
                       onError={(e) => {
@@ -596,7 +596,7 @@ export default function Home() {
           <div className="flex items-center justify-center gap-3 mb-6">
             <div className="w-8 h-8 rounded-full overflow-hidden border border-primary/40 bg-card flex items-center justify-center">
               <img
-                src={`${import.meta.env.BASE_URL}images/my-logo.png`}
+                src={`${import.meta.env.BASE_URL}images/my-logo.jpeg`}
                 alt="SleepingWarrior"
                 className="w-full h-full object-cover"
                 onError={(e) => {
